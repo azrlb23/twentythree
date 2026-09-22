@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, watch } from 'vue'
+import { onMounted, watch, ref } from 'vue'
 import { 
   Play, 
   Pause, 
