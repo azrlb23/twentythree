@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+@theme {
+  /* Sage Green / Matcha Aesthetic Colors */
+  --color-sage-primary: #8da871;
+  --color-sage-dark: #657e4e;
+  --color-forest-dark: #283618;
+  --color-forest-deep: #1f2913;
+  --color-matcha-light: #eef3e8;
+  --color-matcha-tint: #e2ecd8;
+  --color-warm-cream: #f7f8f4;
+  --color-soft-white: #ffffff;
+  --color-charcoal-green: #222b1c;
+
+  /* Typography */
+  --font-beni: 'Beni', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-clash-grotesk: 'Clash Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-caveat: 'Caveat', cursive, sans-serif;
+  --font-script: 'Dancing Script', cursive, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Spacing & Radii */
+  --radius-pill: 9999px;
+  --radius-card: 28px;
+}
+
+:root {
+  --color-sage-primary: #8da871;
+  --color-sage-dark: #657e4e;
+  --color-forest-dark: #283618;
+  --color-matcha-light: #eef3e8;
+  --color-warm-cream: #f7f8f4;
+}
+
+/* Custom Typography */
+.font-caveat {
+  font-family: var(--font-caveat);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-serif-romantic {
+  font-family: var(--font-serif);
+}
+
+/* Paper Grid Background in Soft Sage */
+.paper-grid {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(141, 168, 113, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(141, 168, 113, 0.08) 1px, transparent 1px);
+}
+
+/* Minimalist Organic Grid & Washi Journal Texture */
+.bg-washi-journal {
+  background-color: #f5f6ef;
+  background-image: 
+    radial-gradient(circle at 12% 15%, rgba(254, 249, 195, 0.35), transparent 45%),
+    radial-gradient(circle at 88% 80%, rgba(141, 168, 113, 0.16), transparent 50%),
+    linear-gradient(to right, rgba(141, 168, 113, 0.11) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(141, 168, 113, 0.11) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 26px 26px, 26px 26px;
+}
+
+/* Washi Tape Strip */
+.washi-tape {
+  background: rgba(219, 231, 207, 0.75);
+  box-shadow: 0 1px 3px rgba(40, 54, 24, 0.08);
+  backdrop-filter: blur(1px);
+}
+
+/* Soft Aesthetic Shadow */
+.shadow-aesthetic {
+  box-shadow: 0 12px 32px -4px rgba(40, 54, 24, 0.08), 0 4px 12px -2px rgba(40, 54, 24, 0.04);
+}
+
+.shadow-polaroid {
+  box-shadow: 0 10px 25px -5px rgba(40, 54, 24, 0.12), 0 8px 10px -6px rgba(40, 54, 24, 0.06);
+}
+
+/* Wax seal in Olive Forest 3D */
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #8da871, #556b2f 70%, #384c20 100%);
+  box-shadow: 
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.5),
+    0 8px 16px rgba(56, 76, 32, 0.35);
+}
+
+/* Asymmetric squircle cards from reference */
+.card-asymmetric-tr {
+  border-radius: 28px 8px 28px 28px;
+}
+
+.card-asymmetric-br {
+  border-radius: 28px 28px 8px 28px;
+}
+
+.card-asymmetric-tl {
+  border-radius: 8px 28px 28px 28px;
+}
+
+/* Animations */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.1); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.1); }
+  70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 2.2s infinite ease-in-out;
+}
