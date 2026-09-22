@@ -75,10 +75,6 @@ const handleUnlock = () => {
   }, 300)
 }
 
-// Auto solve / reveal button
-const autoSolve = () => {
-  inputLetters.value = TARGET_WORD.split('')
-}
 
 // Keyboard input support
 const handleKeydown = (e) => {
@@ -168,7 +164,7 @@ onUnmounted(() => {
           class="w-full bg-[#283618] text-white rounded-2xl py-2.5 px-4 shadow-sm text-center md:text-left flex items-center justify-center md:justify-start gap-2 text-xs font-sans font-medium tracking-wide"
         >
           <HelpCircle class="w-4 h-4 shrink-0 text-[#8da871]" />
-          <span>Hint: Her sweetest nickname &mdash; <strong>A - I - I - I</strong></span>
+          <span>Hint: dua suku kata kita</span>
         </div>
       </div>
 
@@ -205,28 +201,21 @@ onUnmounted(() => {
             </div>
           </div>
 
-          <!-- Control Bar: Backspace & Clear & Reveal -->
+          <!-- Control Bar: Backspace & Clear (Reveal Removed) -->
           <div class="mt-4 pt-3 border-t border-[#d5e0cb] flex items-center justify-between text-xs">
             <button 
               @click="handleClear"
               :disabled="inputLetters.length === 0"
-              class="inline-flex items-center gap-1 text-[#657e4e] hover:text-[#283618] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer font-medium"
+              class="inline-flex items-center gap-1.5 text-[#657e4e] hover:text-[#283618] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer font-medium"
             >
               <RotateCcw class="w-3.5 h-3.5" />
               <span>Clear</span>
             </button>
 
             <button 
-              @click="autoSolve" 
-              class="text-[11px] text-[#8da871] hover:text-[#556b2f] underline cursor-pointer font-medium"
-            >
-              Reveal: A I I I
-            </button>
-
-            <button 
               @click="handleBackspace"
               :disabled="inputLetters.length === 0"
-              class="inline-flex items-center gap-1 text-[#657e4e] hover:text-[#283618] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer font-medium"
+              class="inline-flex items-center gap-1.5 text-[#657e4e] hover:text-[#283618] disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer font-medium"
             >
               <Delete class="w-3.5 h-3.5" />
               <span>Delete</span>
