@@ -99,8 +99,7 @@ const albums = [
       { localUrl: '/foto/events/IMG-20260607-WA0028.webp', fallbackUrl: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80', caption: 'Nemenin tanpa banyak ngomong, itu yang bikin terharu.', date: '7 Jun 2026' },
       { localUrl: '/foto/events/IMG-20260607-WA0066.webp', fallbackUrl: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80', caption: 'Terima kasih udah nggak kemana-mana.', date: '7 Jun 2026' },
       { localUrl: '/foto/events/IMG-20260706-WA0108.webp', fallbackUrl: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80', caption: 'Event apapun, asalkan bareng kamu.', date: '6 Jul 2026' },
-      { localUrl: '/foto/events/VID-20260607-WA0021.mp4', fallbackUrl: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80', caption: 'Momen bersama.', date: '7 Jun 2026' },
-      { localUrl: '/foto/events/lv_0_20260701024907.mp4', fallbackUrl: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80', caption: 'Momen bersama.', date: '1 Jul 2026' }
+      { localUrl: '/foto/events/VID-20260607-WA0021.mp4', fallbackUrl: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80', caption: 'Momen bersama.', date: '7 Jun 2026' }
     ]
   },
   {
