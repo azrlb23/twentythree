@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  /* Sage Green / Matcha Aesthetic Colors */
-  --color-sage-primary: #8da871;
-  --color-sage-dark: #657e4e;
-  --color-forest-dark: #283618;
-  --color-forest-deep: #1f2913;
-  --color-matcha-light: #eef3e8;
-  --color-matcha-tint: #e2ecd8;
-  --color-warm-cream: #f7f8f4;
+  /* 3. Orchid Love (Elegan & Intim) Palette */
+  --color-deep-maroon: #6B313C;
+  --color-orchid-pink: #EB899F;
+  --color-rose-wine: #A45F6F;
+  --color-soft-cream: #EEC1AD;
+  --color-cream-bg: #FDF9F7;
+  --color-cream-light: #F8ECE6;
+  --color-cream-tint: #F3DDD3;
+  --color-maroon-dark: #4A1E26;
   --color-soft-white: #ffffff;
-  --color-charcoal-green: #222b1c;
 
   /* Typography */
   --font-beni: 'Beni', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -25,11 +25,11 @@
 }
 
 :root {
-  --color-sage-primary: #8da871;
-  --color-sage-dark: #657e4e;
-  --color-forest-dark: #283618;
-  --color-matcha-light: #eef3e8;
-  --color-warm-cream: #f7f8f4;
+  --color-deep-maroon: #6B313C;
+  --color-orchid-pink: #EB899F;
+  --color-rose-wine: #A45F6F;
+  --color-soft-cream: #EEC1AD;
+  --color-cream-bg: #FDF9F7;
 }
 
 /* Custom Typography */
@@ -45,48 +45,48 @@
   font-family: var(--font-serif);
 }
 
-/* Paper Grid Background in Soft Sage */
+/* Paper Grid Background in Soft Orchid Cream */
 .paper-grid {
   background-size: 24px 24px;
   background-image: 
-    linear-gradient(to right, rgba(141, 168, 113, 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(141, 168, 113, 0.08) 1px, transparent 1px);
+    linear-gradient(to right, rgba(164, 95, 111, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(164, 95, 111, 0.08) 1px, transparent 1px);
 }
 
-/* Minimalist Organic Grid & Washi Journal Texture */
+/* Minimalist Organic Grid & Washi Journal Texture in Orchid Cream */
 .bg-washi-journal {
-  background-color: #f5f6ef;
+  background-color: #FDF8F5;
   background-image: 
-    radial-gradient(circle at 12% 15%, rgba(254, 249, 195, 0.35), transparent 45%),
-    radial-gradient(circle at 88% 80%, rgba(141, 168, 113, 0.16), transparent 50%),
-    linear-gradient(to right, rgba(141, 168, 113, 0.11) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(141, 168, 113, 0.11) 1px, transparent 1px);
+    radial-gradient(circle at 12% 15%, rgba(238, 193, 173, 0.3), transparent 45%),
+    radial-gradient(circle at 88% 80%, rgba(235, 137, 159, 0.15), transparent 50%),
+    linear-gradient(to right, rgba(164, 95, 111, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(164, 95, 111, 0.09) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 26px 26px, 26px 26px;
 }
 
-/* Washi Tape Strip */
+/* Washi Tape Strip in Soft Cream Rose */
 .washi-tape {
-  background: rgba(219, 231, 207, 0.75);
-  box-shadow: 0 1px 3px rgba(40, 54, 24, 0.08);
+  background: rgba(238, 193, 173, 0.65);
+  box-shadow: 0 1px 3px rgba(107, 49, 60, 0.08);
   backdrop-filter: blur(1px);
 }
 
-/* Soft Aesthetic Shadow */
+/* Soft Aesthetic Shadow in Warm Maroon Tones */
 .shadow-aesthetic {
-  box-shadow: 0 12px 32px -4px rgba(40, 54, 24, 0.08), 0 4px 12px -2px rgba(40, 54, 24, 0.04);
+  box-shadow: 0 12px 32px -4px rgba(107, 49, 60, 0.09), 0 4px 12px -2px rgba(107, 49, 60, 0.05);
 }
 
 .shadow-polaroid {
-  box-shadow: 0 10px 25px -5px rgba(40, 54, 24, 0.12), 0 8px 10px -6px rgba(40, 54, 24, 0.06);
+  box-shadow: 0 10px 25px -5px rgba(107, 49, 60, 0.12), 0 8px 10px -6px rgba(107, 49, 60, 0.06);
 }
 
-/* Wax seal in Olive Forest 3D */
+/* Wax seal in Deep Maroon & Rose Wine 3D */
 .wax-seal {
-  background: radial-gradient(circle at 35% 35%, #8da871, #556b2f 70%, #384c20 100%);
+  background: radial-gradient(circle at 35% 35%, #A45F6F, #6B313C 70%, #451B22 100%);
   box-shadow: 
     inset 2px 2px 4px rgba(255, 255, 255, 0.4),
     inset -2px -2px 4px rgba(0, 0, 0, 0.5),
-    0 8px 16px rgba(56, 76, 32, 0.35);
+    0 8px 18px rgba(107, 49, 60, 0.45);
 }
 
 /* Asymmetric squircle cards from reference */

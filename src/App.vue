@@ -36,30 +36,30 @@ const spawnHeart = (e) => {
 <template>
   <div 
     @click="spawnHeart"
-    class="min-h-screen w-full bg-washi-journal text-[#283618] relative selection:bg-[#dbe7cf] selection:text-[#283618] flex flex-col justify-center overflow-x-hidden"
+    class="min-h-screen w-full bg-washi-journal text-[#6B313C] relative selection:bg-[#F3DDD3] selection:text-[#6B313C] flex flex-col justify-center overflow-x-hidden"
   >
 
     <!-- Organic Leaf / Botanical Doodles (Fixed Background Accents) -->
-    <div class="fixed top-8 left-4 w-16 h-28 pointer-events-none opacity-25 text-[#657e4e] z-0 hidden sm:block">
+    <div class="fixed top-8 left-4 w-16 h-28 pointer-events-none opacity-20 text-[#A45F6F] z-0 hidden sm:block">
       <svg viewBox="0 0 60 100" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
         <path d="M30 90 Q30 50 15 20 M15 20 Q25 25 30 40 M28 45 Q40 35 45 48 M25 60 Q12 55 18 70 M27 75 Q38 68 40 82" />
       </svg>
     </div>
 
-    <div class="fixed bottom-10 right-6 w-20 h-28 pointer-events-none opacity-20 text-[#657e4e] z-0 hidden sm:block">
+    <div class="fixed bottom-10 right-6 w-20 h-28 pointer-events-none opacity-15 text-[#A45F6F] z-0 hidden sm:block">
       <svg viewBox="0 0 60 100" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
         <path d="M30 10 Q30 50 45 80 M45 80 Q35 75 30 60 M32 55 Q20 65 15 52 M35 40 Q48 45 42 30 M33 25 Q22 32 20 18" />
       </svg>
     </div>
 
-    <!-- Floating Hearts on Click in Sage Green -->
+    <!-- Floating Hearts on Click in Orchid Pink -->
     <div 
       v-for="h in hearts" 
       :key="h.id" 
-      class="fixed pointer-events-none z-50 text-[#8da871] animate-float"
+      class="fixed pointer-events-none z-50 text-[#EB899F] animate-float"
       :style="{ left: `${h.x - 10}px`, top: `${h.y - 10}px` }"
     >
-      <Heart class="w-5 h-5 fill-current opacity-75" />
+      <Heart class="w-5 h-5 fill-current opacity-80" />
     </div>
 
     <!-- MAIN LOADING STAGES (Divided into separate aesthetic pages) -->
