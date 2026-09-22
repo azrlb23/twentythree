@@ -1,18 +1,32 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, watch } from 'vue'
 import IntroScreen from './components/IntroScreen.vue'
 import WordUnlockPuzzle from './components/WordUnlockPuzzle.vue'
 import SealedEnvelope from './components/SealedEnvelope.vue'
 import LivingCounter from './components/LivingCounter.vue'
 import StoryBoardCard from './components/StoryBoardCard.vue'
 import JourneyTimeline from './components/JourneyTimeline.vue'
+import MusicGallery from './components/MusicGallery.vue'
 import MusicPlayer from './components/MusicPlayer.vue'
 import { Heart } from 'lucide-vue-next'
+import { useYouTube } from './composables/useYouTube.js'
 
-// Distinct full-screen loading stages: 'intro' -> 'puzzle' -> 'envelope' -> 'counter' -> 'letter' -> 'journey'
+// Stage flow: intro -> puzzle -> envelope -> counter -> letter -> journey -> mixtape
 const currentStage = ref('intro')
-const isPlayingMusic = ref(false)
 const hearts = ref([])
+
+// Global state from composable
+const { initYouTubeAPI, isPlaying, togglePlay } = useYouTube()
+
+onMounted(() => {
+  initYouTubeAPI()
+})
+
+watch(currentStage, (newStage) => {
+  if (newStage === 'puzzle' && !isPlaying.value) {
+    togglePlay()
+  }
+})
 
 const resetFlow = () => {
   currentStage.value = 'intro'
@@ -36,7 +50,7 @@ const spawnHeart = (e) => {
 <template>
   <div 
     @click="spawnHeart"
-    class="min-h-screen w-full bg-washi-journal text-[#6B313C] relative selection:bg-[#F3DDD3] selection:text-[#6B313C] flex flex-col justify-center overflow-x-hidden"
+    class="min-h-screen w-full bg-washi-journal text-[#EEC1AD] relative selection:bg-[#6B313C] selection:text-[#F3DDD3] flex flex-col justify-center overflow-x-hidden"
   >
 
     <!-- Organic Leaf / Botanical Doodles (Fixed Background Accents) -->
@@ -88,21 +102,30 @@ const spawnHeart = (e) => {
         <!-- STAGE 4: STORY BOARD AESTHETIC CARD (Reference Layout) -->
         <section v-else-if="currentStage === 'letter'" key="letter" class="w-full">
           <StoryBoardCard 
-            :is-playing-music="isPlayingMusic" 
-            @toggle-music="isPlayingMusic = !isPlayingMusic"
-            @next="currentStage = 'journey'"
+            @next="currentStage = 'mixtape'"
           />
         </section>
 
         <!-- STAGE 5: THE JOURNEY TIMELINE & REPLAY (FINAL SECTION) -->
         <section v-else-if="currentStage === 'journey'" key="journey" class="w-full">
-          <JourneyTimeline @replay="resetFlow" />
+          <JourneyTimeline @next="currentStage = 'mixtape'" />
+        </section>
+
+        <!-- STAGE 6: MUSIC GALLERY MIXTAPE (GRAND FINALE) -->
+        <section v-else-if="currentStage === 'mixtape'" key="mixtape" class="w-full">
+          <MusicGallery 
+            @replay="resetFlow" 
+          />
         </section>
       </Transition>
     </main>
 
-    <!-- Floating Music Player Capsule -->
-    <MusicPlayer v-model:isPlaying="isPlayingMusic" />
+    <!-- GLOBAL MUSIC PLAYER COMPONENT (Floating) -->
+    <!-- It shows unless we are in the mixtape stage where it's replaced by the big gallery -->
+    <MusicPlayer v-if="currentStage !== 'mixtape'" />
+
+    <!-- GLOBAL YOUTUBE HIDDEN PLAYER CONTAINER -->
+    <div id="youtube-global-player" class="absolute w-0 h-0 opacity-0 pointer-events-none"></div>
   </div>
 </template>
 

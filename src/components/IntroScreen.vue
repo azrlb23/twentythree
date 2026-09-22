@@ -148,10 +148,10 @@ const handleEnter = () => {
     >
       <!-- Subtitle -->
       <div>
-        <p class="font-sans font-bold text-lg sm:text-xl text-[#6B313C] tracking-tight">
+        <p class="font-sans font-bold text-lg sm:text-xl text-[#EEC1AD] tracking-tight">
           Our Special World &middot; 23
         </p>
-        <p class="font-sans text-xs sm:text-sm text-[#A45F6F] mt-1 tracking-normal font-medium">
+        <p class="font-sans text-xs sm:text-sm text-[#EB899F] mt-1 tracking-normal font-medium">
           A digital love archive made just for you
         </p>
       </div>
@@ -159,15 +159,13 @@ const handleEnter = () => {
       <!-- Action Love Button (Deep Maroon) -->
       <div>
         <button
-          @click="handleEnter"
-          class="group relative inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#6B313C] hover:bg-[#53242D] text-white shadow-aesthetic hover:shadow-lg hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer mx-auto"
-          title="Love"
-          aria-label="Love"
+          @click="emit('enter')"
+          class="group flex items-center justify-center w-12 h-12 rounded-full bg-[#6B313C] hover:bg-[#A45F6F] text-white shadow-aesthetic hover:shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all cursor-pointer border border-[#EB899F]/20 mx-auto"
         >
-          <Heart class="w-6 h-6 sm:w-7 sm:h-7 fill-white text-white group-hover:scale-110 transition-transform" />
+          <Heart class="w-6 h-6 group-hover:scale-110 transition-transform fill-current" />
         </button>
 
-        <p class="font-sans text-xs text-[#A45F6F] mt-3 font-normal">
+        <p class="font-sans text-xs text-[#EB899F] mt-3 font-normal">
           Tap to open
         </p>
       </div>
